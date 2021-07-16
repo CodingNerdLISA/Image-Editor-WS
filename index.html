@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Editor</title>
+  
+  <link rel="stylesheet" href="CSS/Style.css">
+  <link rel="stylesheet" href=" CSS/normalize.css">
+  
+
+</head>
+
+<body>
+    <!-- <h1> IMAGE EDITOR </h1>
+    <p class="yellow"> CONTENT </p>
+    <p class = "yellow"> More content</p>
+    <p id="last"> Other stuff </p> 
+    // Para hacer comentarios usas ctrl-K-C
+    // Para descomentar usa ctrl-K-U   -->
+
+    <div id="left-pannel" class="pannel">
+
+        <h1 id= "degradado"> Image Editor </h1>
+
+        <!-- CANVAS -->
+        <div id= "canvas"></div>
+
+        <div id="drop"> Drag and drop your image here</div>
+        <button id="download"> Download Image</button>
+
+    </div>  
+    <div id="right-pannel" class="pannel">
+
+        <!-- RED -->
+
+        <div class="scontainer">
+            <label  for="redslider"> Red Filter </label>
+            <input  id= "redslider" type="range" min="-100" max="100" value="0" step ="1" class="slider">
+        </div>
+
+        <!-- GREEN -->
+        
+        <div class="scontainer">
+            <label  for="greenslider"> Green Filter </label>
+            <input  id= "greenslider" type="range" min="-100" max="100" value="0" step ="1" class="slider">
+        </div>
+
+        <!-- BLUE -->
+
+        <div class="scontainer">
+            <label  for="blueslider"> Blue Filter </label>
+            <input   id= "blueslider" type="range" min="-100" max="100" value="0" step ="1" class="slider">
+        </div>
+
+        <select id="pselect">
+            <option value="none" id= "non">None</option>
+            <option value="gs" id= "gray">GrayScale</option>
+            <option value="bw" id= "bww" >Black & White</option>
+            <option value="sic" id= "sing"> Single Color</option>
+        </select>
+
+        <div id="extra-settings"  class="sscontainer" >
+            <p> Color </p>
+            <div id="colorbox"></div>
+            <label  for="toleranceslider"> Tolerance </label>
+            <input   id= "toleranceslider" type="range" min="0" max="100" value="50" step ="1" class="sslider">
+        </div>
+
+
+
+    </div> 
+  
+    <script src="JS/p5.min.js"></script>
+    <script src="JS/jquery-3.6.0.min.js"></script>
+    <script src="JS/Main.js"></script>
+  
+
+</body>
+
+</html>

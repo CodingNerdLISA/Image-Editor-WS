@@ -1,0 +1,397 @@
+
+/* EJEMPLO */
+
+/* h1 { 
+    color: violet;
+    font-size: 100px;
+}
+
+.yellow {
+    color: yellow;
+    font-size: 50px;
+}
+
+#last {
+    color: pink;
+    font-size: 30px;
+} */
+
+
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
+
+
+
+/* LAYOUT */
+
+body { 
+    display: flex; /* Flex pone cosas al lado de otras */
+}
+
+
+h1 {
+    /* color: whitesmoke; */
+    /* background:rgb(37, 37, 37); */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgb(37, 37, 37);
+     text-shadow:  6px 4px 0px; 
+
+    font-size: 150px;
+     font-family: 'Otomanopee One', sans-serif; 
+
+    color: red;
+    animation-name: example;
+    animation-duration: 6s;
+    animation-iteration-count: 3;
+
+
+}
+
+@keyframes example {
+    0%   {color: red;}
+    16.6%  {color: rgb(255, 145, 0);}
+    33.2%  {color: rgb(251, 255, 0);}
+    49.8% {color: rgb(8, 207, 8);}
+    66.4% {color: rgb(19, 146, 231);}
+    83% {color: rgb(115, 8, 216);}
+    100% {color: rgb(230, 8, 218);}
+}
+
+
+/* PANNELS */
+
+#left-pannel {
+    background-color: rgb(145, 146, 146);
+}
+
+#right-pannel {
+    /* background-color: rgb(37, 37, 37); */
+    /* background-image: url(https://i.pinimg.com/originals/f9/01/b4/f901b4607ae3a8c2896e9d9c968714bc.jpg); */
+    background-image: url(https://th.bing.com/th/id/R.e557b46e7d5f64872f6e5ca0b9744d6c?rik=%2bOx1gfkPUX5h6g&pid=ImgRaw);
+    background-size: contain; 
+
+}
+
+
+.pannel {
+    height: 100vh;
+    width: 50vw;
+
+    display: flex;
+        flex-direction: column; /*Va a poner los objetos como columnas */
+
+        align-items: center;
+        justify-content: center;
+
+}
+
+
+/* DROP ZONE */
+
+#drop {
+    /* FONT */
+    font-size: 17px;
+    color: whitesmoke;
+    font-family: 'Abel', sans-serif;
+    margin-top: 7px;
+
+    /* BOX */
+    display: flex;
+        align-items: center;
+        justify-content: center;
+
+    width: 410px;
+    height: 150px;
+    border: 2px dashed rgb(37, 37, 37);
+}
+
+/* DRAGGING IMAGES */
+
+#drop.dragOver {
+    background: linear-gradient(90deg, #e53333, hsl(34, 90%, 53%),#e5f02d, #62ee43, #45bcf6, #f13ef2);
+    color: rgb(37, 37, 37);
+    font-size: 25px;
+    font-family: 'Bebas Neue', cursive;
+
+}
+
+/* CANVAS */
+
+#canvas {
+    border: 2px solid rgb(37, 37, 37);
+
+}
+
+
+
+/* DOWNLOAD BUTTON */
+
+#download {
+
+    /* FONT */
+    color: whitesmoke;
+    font-size: 22px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+
+    /* BOX */
+    margin-top: 7px;
+    background-color: rgb(37, 37, 37);
+    box-shadow: 10px 10px 5px rgb(100, 100, 100);
+    
+    width: 415px;
+    height: 50px;
+
+    cursor: pointer;
+}
+
+#download:hover {
+    background-color: rgb(182, 184, 185);
+
+}
+
+/* SLIDERS */
+
+
+/* .container {
+    color: whitesmoke;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 26px;
+    margin-top: 14px;
+
+    width: 175px;
+    display: flex column;
+    justify-content: center;
+    text-align: center;
+} */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    color: white;
+    
+  }
+  body {
+    background-color: #334;
+    color: white;
+    font-size: 25px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+  }
+  
+  /* Container */
+  .scontainer {
+    width: 300px;
+    margin: 20px;
+    
+    position: relative;
+  }
+
+
+  
+  /* Limit labels */
+  .slider-labels {
+    padding: 3px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+  }
+  
+  /* Value tag */
+  .slider-value {
+    position: absolute;
+    top: -3px;
+    right: -80px;
+    
+    padding: 5px;
+    width: 50px;
+    
+    border-radius: 3px;
+    background-color: white;
+    color: black;
+    
+    text-align: center;
+  }
+  
+  .slider-value::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    
+    position: absolute;
+    top: 50%;
+    left: -5px;
+    transform: translateY(-50%) rotate(45deg); 
+    
+    background: white;
+    border-radius: 1px;
+  }
+
+  .slider {
+    width: 100%;
+    height: 10px;
+    
+    border-radius: 10px;
+    
+    outline: none;
+    
+    -webkit-appearance: none;
+  }
+  
+
+
+
+/* SELECT */
+#pselect {
+    margin-top: 35px;
+    width: 200px;
+    height: 40px;
+
+    background-color: whitesmoke;
+
+    font-size: 18px;
+    font-family: 'Anton', sans-serif;
+    color:rgb(37, 37, 37);
+
+    cursor: pointer;
+
+
+}
+
+
+/* SELECTED COLOR FILTER */
+
+#colorbox {
+    height: 40px;
+    width: 80px;
+    background-color: whitesmoke;
+    border: 1px solid  rgb(37, 37, 37);
+    border-radius: 60%;
+}
+
+#extra-settings {
+    margin-top: 45px;
+    display: flex;
+    align-items: center;
+}
+
+#extra-settings p, #extra-settings label{
+    margin: 0;
+    margin-left: 9px;
+    margin-right: 9px;
+    font-size: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    color: white;
+    
+  }
+  body {
+    background-color: #334;
+    color: white;
+    font-size: 25px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+  }
+  
+  /* Container */
+  .sscontainer {
+    width: 450px;
+    margin: 20px;
+    
+    position: relative;
+  }
+
+
+  
+  /* Limit labels */
+  .sslider-labels {
+    padding: 3px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+  }
+  
+  /* Value tag */
+  .sslider-value {
+    position: absolute;
+    top: -3px;
+    right: -80px;
+    
+    padding: 5px;
+    width: 50px;
+    
+    border-radius: 3px;
+    background-color: white;
+    color: black;
+    
+    text-align: center;
+  }
+  
+  .sslider-value::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    
+    position: absolute;
+    top: 50%;
+    left: -5px;
+    transform: translateY(-50%) rotate(45deg); 
+    
+    background: white;
+    border-radius: 1px;
+  }
+
+  .sslider {
+    width: 100%;
+    height: 10px;
+    
+    border-radius: 10px;
+    
+    outline: none;
+    
+    -webkit-appearance: none;
+  }
+
+
+/* SINGLE */
+
+#sing {
+    color:  #e20ca2;
+}
+
+#gray {
+    color:  #ec8f16;
+}
+
+#non {
+    color:  #ad2411;
+}
+
+#bww {
+    color:  #0daada;
+}
